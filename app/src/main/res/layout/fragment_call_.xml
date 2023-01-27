@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.vivo_app_call.fragment.call">
+
+    <data>
+
+        <variable
+            name="Calldata"
+            type="com.example.vivo_app_call.fragment.call.Call_model_view" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <TextView
+        android:id="@+id/result_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+
+        android:text="@{Calldata.numbersAll}"
+        android:gravity="center"
+        android:padding="8dp"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="@id/result_id"
+        app:layout_constraintStart_toStartOf="@id/result_id"
+        app:layout_constraintTop_toBottomOf="@id/result_id">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/one_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_margin="0dp"
+
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="@color/black"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(1))}"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                android:text="@string/one" />
+
+            <Button
+                android:id="@+id/two_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_margin="0dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(2))}"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                android:text="@string/two" />
+
+            <Button
+                android:id="@+id/three_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_margin="0dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(3))}"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="@string/three"
+              />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/four_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(4))}"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                android:text="@string/four" />
+
+            <Button
+                android:id="@+id/five_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_margin="0dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(5))}"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                android:text="@string/five" />
+
+            <Button
+                android:id="@+id/six_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(6))}"
+                android:layout_margin="0dp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="@string/six"
+                 />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/seven_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(7))}"
+                android:layout_margin="0dp"
+                android:textColor="@color/black"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="@string/seven" />
+
+            <Button
+                android:id="@+id/egt_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(8))}"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                android:text="@string/et"/>
+
+            <Button
+                android:id="@+id/nig_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(9))}"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="@string/ig"
+              />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/star_btn"
+                android:layout_width="50dp"
+                android:textColor="@color/black"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{()->Calldata.btnNumber(@string/star)}"
+                android:layout_height="80dp"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                android:text="*" />
+
+            <Button
+                android:id="@+id/zero_btn"
+                android:layout_width="50dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_height="80dp"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(0))}"
+                android:textColor="@color/black"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                android:text="0" />
+
+            <Button
+                android:id="@+id/hes_btn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="@color/black"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:onClick="@{()->Calldata.btnNumber(@string/hes)}"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="#"
+              />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/list_all"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:background="@color/white"
+                android:src="@drawable/ic_baseline_people_24"
+                />
+
+
+            <ImageButton
+                android:id="@+id/call"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_margin="0dp"
+                android:textColor="@color/black"
+                android:onClick="passdata"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_weight="1"
+                android:background="@drawable/item_btn"
+                android:theme="@style/Theme.green"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:src="@drawable/ic_baseline_call_24"
+                android:text="call" >
+
+
+
+                </ImageButton>
+
+            <ImageButton
+                android:id="@+id/cancle"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{()->Calldata.clearDigitone()}"
+                android:layout_margin="0dp"
+                android:onLongClick="@{()->Calldata.clearDigit()}"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:background="@color/white"
+                android:src="@drawable/ic_baseline_backspace_24"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

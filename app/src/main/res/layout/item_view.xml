@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.vivo_app_call.fragment.add">
+
+    <data>
+
+        <variable
+            name="calllist"
+            type="com.example.vivo_app_call.fragment.add.Ad_model" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="16dp"
+    >
+
+<ImageView
+    android:id="@+id/img_user"
+    android:layout_width="67dp"
+    android:layout_height="65dp"
+    android:src="@drawable/ic_baseline_people_alt_24"
+
+    android:gravity="center"
+    android:text="j"
+    android:textColor="@color/white"
+
+    >
+
+</ImageView>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="name"
+        android:gravity="center"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/timess"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="time"
+        android:gravity="center"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/black"
+
+        >
+
+    </TextView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_baseline_call_missed_outgoing_24"
+        android:id="@+id/img_m"
+        android:layout_marginLeft="10dp"
+        >
+
+    </ImageView>
+
+</LinearLayout>
+</layout>

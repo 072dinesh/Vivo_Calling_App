@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/list_Fragment">
+
+    <fragment
+        android:id="@+id/list_Fragment"
+        android:name="com.example.vivo_app_call.fragment.add.List_Fragment"
+        android:label="fragment_list_"
+        tools:layout="@layout/fragment_list_" >
+        <action
+            android:id="@+id/action_list_Fragment_to_call_Fragment"
+            app:destination="@id/call_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/call_Fragment"
+        android:name="com.example.vivo_app_call.fragment.call.Call_Fragment"
+        android:label="fragment_call_"
+        tools:layout="@layout/fragment_call_" >
+        <action
+            android:id="@+id/action_call_Fragment_to_calling_Fragment"
+            app:destination="@id/calling_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calling_Fragment"
+        android:name="com.example.vivo_app_call.fragment.calling.Calling_Fragment"
+        android:label="fragment_calling_"
+        tools:layout="@layout/fragment_calling_" >
+        <action
+            android:id="@+id/action_calling_Fragment_to_list_Fragment"
+            app:destination="@id/list_Fragment" />
+        <argument
+            android:name="score"
+            android:defaultValue="0"
+            app:argType="string" />
+
+
+    </fragment>
+</navigation>
