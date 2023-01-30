@@ -14,6 +14,6 @@ interface CallDao {
     suspend fun addUser(call: Call)
 
 
-    @Query("SELECT * FROM Call_Tables ORDER BY id ASC")
+    @Query("SELECT * FROM Call_Tables ORDER BY id desc")
     fun readAllData() : LiveData<List<Call>>
 }
