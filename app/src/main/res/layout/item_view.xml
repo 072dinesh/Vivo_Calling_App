@@ -9,7 +9,7 @@
 
         <variable
             name="calllist"
-            type="com.example.vivo_app_call.fragment.add.Ad_model" />
+            type="com.example.vivo_app_call.model.Call" />
     </data>
 
 <LinearLayout
@@ -38,7 +38,8 @@
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:text="name"
+
+        android:text="@{String.valueOf(calllist.customer_number)}"
         android:gravity="center"
         android:fontFamily="sans-serif"
         android:textColor="@color/black"
@@ -51,7 +52,8 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:text="time"
+        android:text="@{String.valueOf(calllist.customer_time)}"
+
         android:gravity="center"
         android:fontFamily="sans-serif"
         android:textColor="@color/black"

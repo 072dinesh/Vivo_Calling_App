@@ -1,11 +1,13 @@
 package com.example.vivo_app_call.fragment.call
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -13,12 +15,12 @@ import com.example.vivo_app_call.R
 import com.example.vivo_app_call.databinding.FragmentCallBinding
 import kotlinx.android.synthetic.main.fragment_call_.*
 
-class Call_Fragment : Fragment() {
+class CallFragment : Fragment() {
 
     lateinit var binding: FragmentCallBinding
     var digit_on_screen = StringBuilder()
 
-    lateinit var callview : Call_model_view
+    lateinit var callview : CallModelView
 
 
     override fun onCreateView(
@@ -26,7 +28,7 @@ class Call_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        callview = ViewModelProvider(this).get(Call_model_view::class.java)
+        callview = ViewModelProvider(this).get(CallModelView::class.java)
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -41,9 +43,17 @@ class Call_Fragment : Fragment() {
             binding.call.setOnClickListener{
 
 //                findNavController().navigate(R.id.action_call_Fragment_to_calling_Fragment)
+                if(TextUtils.isEmpty(result_id.getText().toString()))
+                {
+                    Toast.makeText(requireContext(),"Enter the number", Toast.LENGTH_LONG).show()
 
-                var action = Call_FragmentDirections.actionCallFragmentToCallingFragment(callview.numbersAll.value.toString())
-                findNavController().navigate(action)
+                }
+                else
+                {
+                    var action = CallFragmentDirections.actionCallFragmentToCallingFragment(callview.numbersAll.value.toString())
+                    findNavController().navigate(action)
+                }
+
 
             }
 

@@ -9,7 +9,7 @@
 
         <variable
             name="Calldata"
-            type="com.example.vivo_app_call.fragment.call.Call_model_view" />
+            type="com.example.vivo_app_call.fragment.call.CallModelView" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +26,9 @@
         android:layout_marginTop="150dp"
         android:layout_marginEnd="16dp"
         android:background="@color/white"
-
+        android:layout_gravity="end"
+        android:ellipsize="none"
+        android:singleLine="true"
         android:text="@{Calldata.numbersAll}"
         android:gravity="center"
         android:padding="8dp"
@@ -39,13 +41,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
         android:layout_marginRight="16dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/result_id"
         app:layout_constraintStart_toStartOf="@id/result_id"
-        app:layout_constraintTop_toBottomOf="@id/result_id">
+        app:layout_constraintTop_toBottomOf="@+id/result_id">
 
 
         <LinearLayout
@@ -56,44 +60,42 @@
 
             <Button
                 android:id="@+id/one_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
-                android:layout_margin="0dp"
 
-                style="?android:attr/borderlessButtonStyle"
-                android:textColor="@color/black"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(1))}"
+                android:layout_margin="0dp"
                 android:layout_weight="1"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(1))}"
+                android:text="@string/one"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
-                android:text="@string/one" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/two_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
                 android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(2))}"
                 android:layout_weight="1"
-                android:textColor="@color/black"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(2))}"
+                android:text="@string/two"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
-                android:text="@string/two" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/three_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
                 android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(3))}"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(3))}"
                 android:text="@string/three"
-              />
-
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
 
 
         </LinearLayout>
@@ -106,43 +108,41 @@
 
             <Button
                 android:id="@+id/four_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(4))}"
                 android:layout_margin="0dp"
                 android:layout_weight="1"
-                android:textColor="@color/black"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(4))}"
+                android:text="@string/four"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
-                android:text="@string/four" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/five_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
                 android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(5))}"
-                android:textColor="@color/black"
                 android:layout_weight="1"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(5))}"
+                android:text="@string/five"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
-                android:text="@string/five" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/six_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(6))}"
                 android:layout_margin="0dp"
-                android:textColor="@color/black"
                 android:layout_weight="1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(6))}"
                 android:text="@string/six"
-                 />
-
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
 
 
         </LinearLayout>
@@ -155,42 +155,40 @@
 
             <Button
                 android:id="@+id/seven_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(7))}"
                 android:layout_margin="0dp"
-                android:textColor="@color/black"
-                style="?android:attr/borderlessButtonStyle"
                 android:layout_weight="1"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(7))}"
+                android:text="@string/seven"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:text="@string/seven" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/egt_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(8))}"
                 android:layout_margin="0dp"
                 android:layout_weight="1"
-                style="?android:attr/borderlessButtonStyle"
-                android:textColor="@color/black"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(8))}"
+                android:text="@string/et"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
-                android:text="@string/et"/>
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/nig_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(9))}"
                 android:layout_margin="0dp"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(9))}"
                 android:text="@string/ig"
-              />
-
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
 
 
         </LinearLayout>
@@ -203,47 +201,46 @@
 
             <Button
                 android:id="@+id/star_btn"
-                android:layout_width="50dp"
-                android:textColor="@color/black"
                 style="?android:attr/borderlessButtonStyle"
-                android:onClick="@{()->Calldata.btnNumber(@string/star)}"
+                android:layout_width="50dp"
                 android:layout_height="80dp"
                 android:layout_margin="0dp"
                 android:layout_weight="1"
+                android:onClick="@{()->Calldata.btnNumber(@string/star)}"
+                android:text="*"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
-                android:text="*" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/zero_btn"
-                android:layout_width="50dp"
                 style="?android:attr/borderlessButtonStyle"
+                android:layout_width="50dp"
                 android:layout_height="80dp"
-                android:onClick="@{()->Calldata.btnNumber(String.valueOf(0))}"
-                android:textColor="@color/black"
                 android:layout_margin="0dp"
                 android:layout_weight="1"
+                android:onClick="@{()->Calldata.btnNumber(String.valueOf(0))}"
+                android:text="0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
-                android:text="0" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/hes_btn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="80dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:textColor="@color/black"
                 android:layout_margin="0dp"
                 android:layout_weight="1"
                 android:onClick="@{()->Calldata.btnNumber(@string/hes)}"
+                android:text="#"
 
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:text="#"
-              />
-
+                android:textColor="@color/black" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -252,52 +249,48 @@
 
             <ImageButton
                 android:id="@+id/list_all"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
-                style="?android:attr/borderlessButtonStyle"
                 android:layout_margin="0dp"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:background="@color/white"
                 android:src="@drawable/ic_baseline_people_24"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
 
 
             <ImageButton
                 android:id="@+id/call"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_margin="0dp"
-                android:textColor="@color/black"
-                android:onClick="passdata"
-                style="?android:attr/borderlessButtonStyle"
                 android:layout_weight="1"
                 android:background="@drawable/item_btn"
-                android:theme="@style/Theme.green"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:onClick="passdata"
                 android:src="@drawable/ic_baseline_call_24"
-                android:text="call" >
+                android:text="call"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                android:theme="@style/Theme.green">
 
 
-
-                </ImageButton>
+            </ImageButton>
 
             <ImageButton
                 android:id="@+id/cancle"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:onClick="@{()->Calldata.clearDigitone()}"
                 android:layout_margin="0dp"
-                android:onLongClick="@{()->Calldata.clearDigit()}"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:background="@color/white"
+                android:onClick="@{()->Calldata.clearDigitone()}"
+                android:onLongClick="@{()->Calldata.clearDigit()}"
                 android:src="@drawable/ic_baseline_backspace_24"
-                />
-
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
 
 
         </LinearLayout>

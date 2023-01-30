@@ -1,4 +1,4 @@
-package com.example.vivo_app_call.fragment.add
+package com.example.vivo_app_call.fragment.list
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/list_Fragment"
-        android:name="com.example.vivo_app_call.fragment.add.List_Fragment"
+        android:name="com.example.vivo_app_call.fragment.list.ListFragment"
         android:label="fragment_list_"
         tools:layout="@layout/fragment_list_" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/call_Fragment"
-        android:name="com.example.vivo_app_call.fragment.call.Call_Fragment"
+        android:name="com.example.vivo_app_call.fragment.call.CallFragment"
         android:label="fragment_call_"
         tools:layout="@layout/fragment_call_" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/calling_Fragment"
-        android:name="com.example.vivo_app_call.fragment.calling.Calling_Fragment"
+        android:name="com.example.vivo_app_call.fragment.calling.CallingFragment"
         android:label="fragment_calling_"
         tools:layout="@layout/fragment_calling_" >
         <action

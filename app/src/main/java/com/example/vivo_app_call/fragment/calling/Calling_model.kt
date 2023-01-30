@@ -14,6 +14,8 @@ class Calling_model(findnumber:String) :ViewModel() {
     val score: LiveData<String>
     get() = _cunumber
 
+     var endtime = MutableLiveData<String>()
+
 
     init {
         _cunumber.value = findnumber

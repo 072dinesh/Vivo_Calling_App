@@ -40,6 +40,7 @@
         android:textSize="25sp"
         ></TextView>
 
+
     <Chronometer
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +53,21 @@
         >
 
     </Chronometer>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#F10A0A"
+            android:gravity="center"
+            android:text="@{Callingdata.endtime}"
+
+            android:id="@+id/endtime"
+
+            android:textSize="20sp"
+
+            >
+
+        </TextView>
 
     </LinearLayout>
 

@@ -3,14 +3,13 @@ package com.example.vivo_app_call.fragment.calling
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.os.SystemClock
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.vivo_app_call.R
@@ -18,16 +17,16 @@ import com.example.vivo_app_call.databinding.FragmentCallingBinding
 import com.example.vivo_app_call.model.Call
 import com.example.vivo_app_call.viewmodel.CallViewModel
 import kotlinx.android.synthetic.main.fragment_calling_.*
-import java.util.concurrent.TimeUnit
 
 
-class Calling_Fragment : Fragment() {
+class CallingFragment : Fragment() {
 
 
     lateinit var binding: FragmentCallingBinding
 
-    private lateinit var viewModelCall: Calling_model
-    private lateinit var viewmodel :CallViewModel
+    private val viewModelCall: Calling_model by viewModels{viewModelCallSecon}
+//    private lateinit var viewmodel :CallViewModel
+    private val viewmodel: CallViewModel by viewModels()
     private lateinit var viewModelCallSecon: Calling_modelsecond
 
     private var timeStarted = false
@@ -49,10 +48,9 @@ class Calling_Fragment : Fragment() {
             false
         )
 
-        viewmodel = ViewModelProvider(this).get(CallViewModel::class.java)
 
-          viewModelCallSecon = Calling_modelsecond(Calling_FragmentArgs.fromBundle(requireArguments()).score)
-        viewModelCall = ViewModelProvider(this, viewModelCallSecon).get(Calling_model::class.java)
+          viewModelCallSecon = Calling_modelsecond(CallingFragmentArgs.fromBundle(requireArguments()).score)
+        //viewModelCall = ViewModelProvider(this, viewModelCallSecon).get(Calling_model::class.java)
         binding.callingdata = viewModelCall
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -61,22 +59,30 @@ class Calling_Fragment : Fragment() {
 
         binding.endcall.setOnClickListener {
 
-            Handler().postDelayed({
-                findNavController().navigate(R.id.action_calling_Fragment_to_list_Fragment)
 
-            },5000)
-            binding.timercall.stop()
-            var sarves = binding.timercall.text.toString()
+            viewModelCall.endtime.value="Endcall"
+                Handler().postDelayed({
 
-           // Log.d("main", binding.timercall.text.toString())
-            val call = Call(0,viewModelCall.score.value.toString(),sarves)
+
+                    findNavController().navigate(R.id.action_calling_Fragment_to_list_Fragment)
+
+                }, 3000)
+
+                binding.timercall.stop()
+                var sarves = binding.timercall.text.toString()
+
+                // Log.d("main", binding.timercall.text.toString())
+                val call = Call(0, viewModelCall.score.value.toString(), sarves)
+
+
+
             viewmodel.addCall(call)
-            Toast.makeText(requireContext(),"Successfully added!", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
 
-            //calculateTime(serviceLong.toLong())
+                //calculateTime(serviceLong.toLong())
+            }
 
 
-        }
 
 
         return binding.root

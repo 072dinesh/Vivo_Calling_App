@@ -3,11 +3,9 @@ package com.example.vivo_app_call.fragment.call
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kotlinx.android.synthetic.main.fragment_call_.*
-import net.objecthunter.exp4j.Expression
 
 
-class Call_model_view : ViewModel() {
+class CallModelView : ViewModel() {
 
     var digit_on_screen = StringBuilder()
    val numbersAll = MutableLiveData<String>()
@@ -32,9 +30,20 @@ class Call_model_view : ViewModel() {
 
 
     fun clearDigitone(){
+
+
         val length = digit_on_screen.length
-        digit_on_screen.deleteCharAt(length-1)
-        numbersAll.value = digit_on_screen.toString()
+        if (length==0)
+        {
+
+        }
+        else
+        {
+            digit_on_screen.deleteCharAt(length-1)
+            numbersAll.value = digit_on_screen.toString()
+        }
+
+
 
     }
 
