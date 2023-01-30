@@ -2,18 +2,20 @@ package com.example.vivo_app_call.fragment.call
 
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.fragment.app.Fragment
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.vivo_app_call.R
 import com.example.vivo_app_call.databinding.FragmentCallBinding
 import kotlinx.android.synthetic.main.fragment_call_.*
+
 
 class CallFragment : Fragment() {
 
@@ -40,11 +42,13 @@ class CallFragment : Fragment() {
         binding.calldata = callview
         binding.lifecycleOwner = viewLifecycleOwner
 
+
             binding.call.setOnClickListener{
 
 //                findNavController().navigate(R.id.action_call_Fragment_to_calling_Fragment)
                 if(TextUtils.isEmpty(result_id.getText().toString()))
                 {
+
                     Toast.makeText(requireContext(),"Enter the number", Toast.LENGTH_LONG).show()
 
                 }
